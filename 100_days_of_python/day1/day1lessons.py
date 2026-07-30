@@ -35,3 +35,21 @@ print("New lines can be created with a \ and the letter n")
 # Mini challenge
 print("Hello" + input("What is your name?") + "!")
 
+# DAY 1: LESSON 4 - VARIABLES
+# DAY 1: Lesson 4 - minichallenge variables and len()
+name = input("Enter your name: ")		# with variables
+print(len(name))
+
+print(len(input("Enter your name: ")))		# and as one single line
+
+username = input("Enter your name: ")		# and with variable segmented solution
+length = len(username)
+print (length)
+
+# CODE EXCERSIZE 3
+glass1 = "milk"
+glass2 = "juice"
+glass3 = glass2
+glass2 = glass1
+glass1 = glass3
+
