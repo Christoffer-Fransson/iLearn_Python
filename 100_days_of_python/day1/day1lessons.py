@@ -53,3 +53,19 @@ glass3 = glass2
 glass2 = glass1
 glass1 = glass3
 
+# DAY 1: LESSON 5 - VARIABLE NAMING
+'''
+Rules for naming variables:
+1. Make sure your variable names are descriptive
+2. Don't have spaces between words
+3. Don't start with numbers
+4. Don't use special words like print or input
+5. Choose simple words that are less likely to become typos
+6. Check the company style guidelines if you start work at a company
+'''
+
+# DAY 1: LESSON 6 - Final project
+print("Welcome to the Band Name Generator.\n")
+city = input("What's the name of the city you grew up in?\n")
+petname = input("What is your pet name?\n")
+print("Your band name would be " + city +" " + petname)
