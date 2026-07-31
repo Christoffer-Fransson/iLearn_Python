@@ -66,3 +66,61 @@
 	print("Number of letters in your name: " + str(length_of_name))
 
 
+#DAY2: LESSSON 3 - Mathematical Operations
+	print("My age: " + str(12))
+	print(123 + 456)
+	print(7 - 3)
+	print (3 * 2)
+	print (6 / 3)
+
+	# IMPLICIT TYPECASTING
+	# Note: Division operator / returns a float datatype
+	# E.G. print(6 / 3) returns 2.0
+
+	# print (6 // 3) returns integer datatype. BE CAREFUL USING THIS
+	# What this does is do 6 / 3 and then remove all the decimals
+	print(6 // 3)   # returns 2
+	print(5 // 3)   # returns 1 (expecting 1.5) can be useful when you want return without decimal place
+
+	# Exponent "to the power of"
+	print(2 ** 2)     # (is 2 with an exponent of 2)
+	print(2 ** 3)
+
+	# TIP Careful with mathematical operations
+	# Certain priorities of operation. eg PEMDAS
+
+	# PEMDAS
+	# Order of mathematical operations  print(123 + 456)
+	print(7 - 3)
+	print (3 * 2)
+	print (6 / 3)
+
+	# IMPLICIT TYPECASTING
+	# Note: Division operator / returns a float datatype
+	# E.G. print(6 / 3) returns 2.0
+
+	# print (6 // 3) returns integer datatype. BE CAREFUL USING THIS
+	# What this does is do 6 / 3 and then remove all the decimals
+	print(6 // 3)   # returns 2
+	print(5 // 3)   # returns 1 (expecting 1.5) can be useful when you want return without decimal place
+
+	# Exponent "to the power of"
+	print(2 ** 2)     # (is 2 with an exponent of 2)
+	print(2 ** 3)
+
+	# TIP Careful with mathematical operations
+	# Certain priorities of operation. eg PEMDAS
+
+	# PEMDAS
+	# Order of mathematical operations (if same priority, priorities from left to right)
+	# Parentheses, Exponents, Multiplications/Dvision, Addition/Subtraction
+	# E.G (in order of priority)
+	# 1. () - Parenthesis
+	# 2. ** - Exponents
+	# 3. * - Multiplication
+	# 4. * or / - Multiplication / Division
+	# 5. + or -  - Addition or subtraction
+	
+	print( 3 * 3 + 3 / 3 -3) # Returns 7.0
+	# How to change the result to 3
+
