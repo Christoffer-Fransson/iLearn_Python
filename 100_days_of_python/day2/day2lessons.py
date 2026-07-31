@@ -89,8 +89,6 @@
 	# TIP Careful with mathematical operations
 	# Certain priorities of operation. eg PEMDAS
 
-	# PEMDAS
-	# Order of mathematical operations  print(123 + 456)
 	print(7 - 3)
 	print (3 * 2)
 	print (6 / 3)
@@ -124,3 +122,4 @@
 	print( 3 * 3 + 3 / 3 -3) # Returns 7.0
 	# How to change the result to 3
 
+#DAY2: LESSON 4 - Number Manipulation
