@@ -109,4 +109,96 @@ else:
     print("Odd")
 
 #DAY3: LESSON 3 - Nested if statements and elif statements
+'''
+                +-----------+
+                |   Start   |
+                +-----------+
+                      |
+                      v
+                 .-----------.
+                /  Height >   \
+                \   120cm?    /
+                 '-----------'
+             No /             \ Yes
+               v               v
+      +---------------+  +-------------+
+      |   Can't ride   |  |  Can ride   |
+      +---------------+  +-------------+
+                                |
+                                v
+                           .---------.
+                          /    age    \
+                          \           /
+                           '---------'
+              18 or under /           \ Over 18
+                         v             v
+                  +-----------+  +-----------+
+                  |    $7     |  |   $12     |
+                  +-----------+  +-----------+
+'''
 
+print("Welcome to the rollercoaster!")
+height = int(input("What is your height in cm? "))
+
+if height >= 120:
+    print("You can ride the rollercoaster")
+    age = int(input("What is your age? "))
+    if age <= 18:
+        print("Please pay $7.")
+    else:
+        print("Please pay $12.You can ride the rollercoaster")
+else:
+    print("Sorry you have to grow taller before you can ride.")
+
+#   elif
+'''
+                      |
+                      v
+                +-----------+
+                | Can ride  |
+                +-----------+
+                      |
+                      v
+                 .---------.
+                /    age    \
+                \           /
+                 '---------'
+     under 12   /     |     \   Over 18
+               v       v      v
+        +--------+ +--------+ +--------+
+        |   $5   | |   $7   | |  $12   |
+        +--------+ +--------+ +--------+
+                      12-18
+
+'''
+#   Rollercoaster with elif
+print("Welcome to the rollercoaster!")
+height = int(input("What is your height in cm? "))
+
+if height >= 120:
+    print("You can ride the rollercoaster")
+    age = int(input("What is your age? "))
+    if age <= 12:
+        print("Pay $5.")
+    elif age <= 18:
+        print("Please pay $7.")
+    else:
+        print("Please pay $12.You can ride the rollercoaster")
+else:
+    print("Sorry you have to grow taller before you can ride.")
+
+	# Code challenge
+weight = 85
+height = 1.85
+
+bmi = weight / (height ** 2)
+
+	# Do not modify the values above
+	# Write your code below 👇
+if bmi < 18.5:
+    print("underweight")
+elif bmi >= 18.5 < 25:
+    print("normal weight")
+elif bmi >= 25:
+    print("overweight")
+#DAY3: Lesson 4 - Multiple ifs
