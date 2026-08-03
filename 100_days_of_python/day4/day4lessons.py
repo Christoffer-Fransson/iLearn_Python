@@ -45,3 +45,27 @@ fruits.append("Orange")
 #   Editing an already registered position
 fruits[1] = "Mandarin"
 print(fruits[1])
+
+
+#DAY4: LESSON 3 - Code challenge
+#DAY4: LESSON 3 - Code Challenge -> Print a random name from a list
+#   My solution
+import random
+
+friends = ["Alice", "Bob", "Charlie", "David", "Emanuel"]
+list_length = (len(friends)  -1)     # -1 since first position == position 0!
+random_list_pos = random.randint(0,list_length)         # assigns a variable integer between 0 and list max length
+
+print(friends[random_list_pos])
+
+#   Teachers solution
+#   Solution 1 - Using random.choise() function
+import random
+print(random.choice(friends))
+
+#   Solution 2 - Using random.randint
+random_index = random.randint(0,4)
+print(friends[random_index])
+
+
+
