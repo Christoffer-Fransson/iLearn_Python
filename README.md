@@ -14,4 +14,13 @@ Notes, tips, and code stored as I work through learning modules — organized by
 
 ## Why
 
-A centralized place to track and reference what I've learned, and to build toward stronger Python fluency for e.g.  data engineering / Anlytics / AI development work.
+A centralized place to track and reference what I've learned, and to build toward stronger Python fluency for e.g.  data engineering / Analytics / AI development work.
+
+## Repository Structure
+
+Content is organized into a few broad categories:
+- **Coursework** — exercises and notes from structured courses (Microsoft Learn, Udemy, Schoolwork ( DE22), etc.)
+- **Challenges** — self-directed practice (e.g. 100 Days of Code)
+- **Standalone scripts** — topic-specific files covering individual Python concepts
+
+The structure evolves as I learn and continue to develop my Python skillset, so exact folder names may shift over time.
