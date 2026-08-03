@@ -28,4 +28,20 @@ if random_heads_or_tails == 0:
 else:
     print("Tails")
 
-#DAY4 - LESSON 2 - Lists
+#DAY4: LESSON 2 - Lists
+#   Python list documentation: https://docs.python.org/3/tutorial/datastructures.html
+#   You can create a simple collection of ordered items using a Python list. e.g.
+
+fruits = ["Cherry", "Apple", "Pear"]
+#   Access items lin lists by square brackets and index position (0 is the first position)
+print(fruits[1])
+
+#   Negative indice -> counting backward still starting from position 0
+print(fruits[-1])
+
+#   Appending a list -> Adds information to the end of the list using append() function
+fruits.append("Orange")
+
+#   Editing an already registered position
+fruits[1] = "Mandarin"
+print(fruits[1])
