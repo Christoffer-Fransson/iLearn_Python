@@ -67,5 +67,26 @@ print(random.choice(friends))
 random_index = random.randint(0,4)
 print(friends[random_index])
 
+#DAY4: LESSON 4 - IndexError and Nested lists
+#   IndexError - is when you refer to list position out of range.
+#   E.g. len(list) = 50 but since positing start at 0
+#   you need to add -1 e.g. list_pos_max = len(list) - 1
+#   otherwise you can call a position tha tdoes not exist resulting in Index Error
+
+#   Nested lists - A list inside a list or "2d list"
+twodimensional_list = [[1,2,3,4],[5,6,7,8]]
+print(len(twodimensional_list))
+print(f'list length: {len(twodimensional_list)}')
+print(twodimensional_list)
+print(f"position 0: {twodimensional_list[0]}")
+print(f"position 1: {twodimensional_list[1]}")
+
+# Nested position targeting
+letters = ["a", "b", "c"]
+numbers = ["1", "2", "3"]
+
+two_dimensional = [letters, numbers]
+
+print(two_dimensional[1][1])    # targets two_dimensional list position 1, then that list position 1
 
 
