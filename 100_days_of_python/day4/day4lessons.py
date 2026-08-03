@@ -89,4 +89,138 @@ two_dimensional = [letters, numbers]
 
 print(two_dimensional[1][1])    # targets two_dimensional list position 1, then that list position 1
 
+#DAY4: LESSON 5 - Rock Paper Scissors Challenge
 
+rock = '''
+    _______
+---'   ____)
+      (_____)
+      (_____)
+      (____)
+---.__(___)
+'''
+
+paper = '''
+    _______
+---'   ____)____
+          ______)
+          _______)
+         _______)
+---.__________)
+'''
+
+scissors = '''
+    _______
+---'   ____)____
+          ______)
+       __________)
+      (____)
+---.__(___)
+'''
+
+#   My Solution
+# Imports
+import random
+
+
+game_graphics = [rock, paper, scissors]
+game_alternatives = ["rock", "paper", "scissors"]
+print("Welcome to rock paper scissors!")
+print(f"(Write: {game_alternatives[0]}, {game_alternatives[1]} or {game_alternatives[2]})")
+player_choice = input("What is your choice?: ")
+print(player_choice)
+
+# Player
+if player_choice == "rock":
+    print(f"Player played rock {rock}")
+elif player_choice == "paper":
+    print(f"Player played paper {paper}")
+elif player_choice == "scissors":
+    print(f"Player played scissors {scissors}")
+else: print("Error:Incorrect choice")
+
+computer_choice = random.choice(game_alternatives)
+
+# Computer
+if computer_choice == "rock":
+    print(f"Computer played rock {rock}")
+elif computer_choice == "paper":
+    print(f"Computer played paper {paper}")
+elif computer_choice == "scissors":
+    print(f"Computer played scissors {scissors}")
+else: print("Error:Incorrect choice")
+
+# Win evaluator
+if player_choice == computer_choice:
+    print("It's a tie!")
+elif player_choice == "rock":
+    if computer_choice == "paper":
+        print("Computer wins! Paper beats rock!")
+    elif computer_choice == "scissors":
+        print ("Player wins! Rock beats scissors!")
+elif player_choice == "paper":
+    if computer_choice == "scissors":
+        print("Computer wins! Scissors beats paper!")
+    elif computer_choice == "rock":
+        print("Player wins! Paper beats rock!")
+elif player_choice == "scissors":
+    if computer_choice == "rock":
+        print("Computer wins! Rock beats scissors!")
+    elif computer_choice == "paper":
+        print("Player wins! Scissors beats paper!")
+
+#   Teachers solution
+import random
+
+rock = '''
+    _______
+---'   ____)
+      (_____)
+      (_____)
+      (____)
+---.__(___)
+'''
+
+paper = '''
+    _______
+---'   ____)____
+          ______)
+          _______)
+         _______)
+---.__________)
+'''
+
+scissors = '''
+    _______
+---'   ____)____
+          ______)
+       __________)
+      (____)
+---.__(___)
+'''
+
+game_images = [rock, paper, scissors]
+
+user_choice = int(input("What do you choose? Type 0 for Rock, 1 for Paper or 2 for Scissors.\n"))
+# Note: it's worth checking if the user has made a valid choice before the next line of code.
+# If the user typed somthing other than 0, 1 or 2 the next line will give you an error.
+# You could for example write:
+if user_choice >= 0 and user_choice <= 2:
+    print(game_images[user_choice])
+
+computer_choice = random.randint(0, 2)
+print("Computer chose:")
+print(game_images[computer_choice])
+
+if user_choice >= 3 or user_choice < 0:
+    print("You typed an invalid number. You lose!")
+elif user_choice == 0 and computer_choice == 2:
+    print("You win!")
+elif computer_choice == 0 and user_choice == 2:
+    print("You lose!")
+elif computer_choice > user_choice:
+    print("You lose!")
+elif user_choice > computer_choice:
+    print("You win!")
+elif computer_choice == user_choice:
+    print("It's a draw!")
