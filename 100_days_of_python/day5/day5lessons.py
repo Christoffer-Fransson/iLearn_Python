@@ -109,3 +109,37 @@ total = 0
 for number in range(1, 101):
     total += number
 print(total)
+
+#DAY5: LESSON 3 - FizzBuzz Code challenge
+
+#   My Solution
+number_range = list(range(1,101,1))
+for number in number_range:
+    if number % 3 == 0 and number % 5 == 0:
+        print("FizzBuzz")
+    elif number % 3 == 0:
+        print("Fizz")
+    elif number % 5 == 0:
+        print("Buzz")
+    else:
+        print(number)
+        
+#   Teachers Solution
+# Create a loop with For and Range to go from 1 to 100.
+for number in range(1, 101):
+  # First check if the number is divisible by both 3 and 5.
+  if number % 3 == 0 and number % 5 == 0:
+    print("FizzBuzz")
+ 
+  # Then check if the number is only divisible by 3
+  elif number % 3 == 0:
+    print("Fizz")
+ 
+  # Finally check if the number is only divisible by 5
+  elif number % 5 == 0:
+    print("Buzz")
+ 
+  # If it's not divisible by either of those numbers, just print the number
+  else:
+    print(number)
+
