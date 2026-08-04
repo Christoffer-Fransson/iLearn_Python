@@ -80,3 +80,32 @@ for score in student_scores:
         max_score = score
 
 print(max_score)
+
+#DAY5: LESSON 3 - For Loops with Range
+''' The combination of the range() function with the Python For Loop allows us to run
+    a loop for as many times as we wish. Instead of looping through each item in a List,
+    we can loop through a range of numbers.
+'''
+
+
+#   range() - function
+#   syntax: range(a,b,c) where a = start of range, b = end of range, c = how large steps per number in range.
+
+range(1,10)
+for number in range(1,10, 3):
+    print(number)
+
+
+#   GAUS CHALLENGE - calculate the sum of all numbers inside a range
+#   My solution
+number_list = list(range(1,101,1))
+number_sum = 0
+for number in number_list:
+    number_sum = number_sum + number
+print(number_sum)
+
+#   Teachers solution
+total = 0
+for number in range(1, 101):
+    total += number
+print(total)
