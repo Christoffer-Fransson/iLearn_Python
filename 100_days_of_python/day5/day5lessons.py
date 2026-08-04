@@ -143,3 +143,103 @@ for number in range(1, 101):
   else:
     print(number)
 
+
+#DAY5: LESSON 4 - Password Generator Project
+letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+symbols = ['!', '#', '$', '%', '&', '(', ')', '*', '+']
+
+print("Welcome to the PyPassword Generator!")
+nr_letters = int(input("How many letters would you like in your password?\n"))
+nr_symbols = int(input(f"How many symbols would you like?\n"))
+nr_numbers = int(input(f"How many numbers would you like?\n"))
+
+#   Easy Level - My solution
+import random
+easy_password = list()
+slot = 0
+while slot < nr_letters:
+    easy_password.append(random.choice(letters))
+    slot+= 1
+
+slot = 0
+while  slot < nr_symbols:
+    easy_password.append(random.choice(symbols))
+    slot += 1
+
+slot = 0
+while  slot < nr_numbers:
+    easy_password.append(random.choice(numbers))
+    slot += 1
+print(f"Easy pw: {easy_password}")
+print("".join(easy_password))
+
+# Easy level - --> Teachers solution
+'''
+password = ""
+for char in range(0, nr_letters):
+    password += random.choice(letters)
+
+for char in range(0, nr_symbols):
+    password += random.choice(symbols)
+
+for char in range(0, nr_numbers):
+    password += random.choice(numbers)
+
+print(password)
+'''
+
+#   Hard level - My solution
+# Imports
+import random
+
+# Variables
+hard_password = list()
+char_type = ["letters", "numbers", "symbols"]
+char_type_sel = ""
+
+# Total user requested length of password
+pw_length = nr_letters + nr_numbers + nr_symbols
+
+# Loop Counters
+pw_length_used = 0
+letters_used = 0
+symbols_used = 0
+numbers_used = 0
+
+# Loop iterating through and randomizing char type until pw length achieved
+while pw_length_used <= pw_length:
+        char_type_sel = random.choice(char_type)
+        if char_type_sel == "letters" and letters_used < nr_letters:
+            hard_password.append(random.choice(letters))
+            letters_used += 1
+        if char_type_sel == "symbols" and symbols_used < nr_symbols:
+            hard_password.append(random.choice(symbols))
+            symbols_used += 1
+        if char_type_sel == "numbers" and numbers_used < nr_numbers:
+            hard_password.append(random.choice(numbers))
+            numbers_used += 1
+        pw_length_used += 1
+print(f"hard password: {hard_password}")
+print("".join(hard_password))
+
+#   Hard level --> Teachers solution
+password_list = []
+for char in range(0, nr_letters):
+    password_list.append(random.choice(letters))
+
+for char in range(0, nr_symbols):
+    password_list.append(random.choice(symbols))
+
+for char in range(0, nr_numbers):
+    password_list.append(random.choice(numbers))
+
+print(password_list)
+random.shuffle(password_list)
+print(password_list)
+
+password = ""
+for char in password_list:
+    password += char
+
+print(f"Your password is: {password}")
