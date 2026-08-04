@@ -15,6 +15,7 @@ Notes, tips, and code stored as I work through learning modules — organized by
 ## Why
 
 A centralized place to track and reference what I've learned, and to build toward stronger Python fluency for e.g.  data engineering / Analytics / AI development work.
+Additionally organising it into a repository increases my experience using git/github
 
 ## Repository Structure
 
