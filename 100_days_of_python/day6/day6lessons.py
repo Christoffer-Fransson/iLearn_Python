@@ -284,3 +284,40 @@ while not at_goal():
         else:
                 move()
 '''
+#DAY6 - Reeborgs world - Final challenge escape the maze!
+#       Url: https://reeborg.ca/reeborg.html?lang=en&mode=python&menu=worlds%2Fmenus%2Freeborg_intro_en.json&name=Maze&url=worlds%2Ftutorial_en%2Fmaze1.json
+#       My Solution: -> 12 lines
+'''
+def turn_right():
+    turn_left()
+    turn_left()
+    turn_left()
+    
+while not at_goal():
+    if front_is_clear():
+        move()
+    elif wall_in_front() and right_is_clear():
+        turn_right()
+    elif wall_in_front() and wall_on_right():
+        turn_left()
+'''
+#       Teachers solution: -> 13 lines
+'''
+def turn_right():
+    turn_left()
+    turn_left()
+    turn_left()
+    
+while not at_goal():
+    if right_is_clear():
+        turn_right()
+        move()
+    elif front_is_clear():
+        move()
+    else:
+        turn_left()
+'''
+
+
+# CLIFFHANGER COME BACK TO HERE WHEN DAY 15 IS CONCLUDED
+# --> See udemy day 6: 5. Final lesson -> timestamp 09:00
