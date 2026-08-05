@@ -231,3 +231,56 @@ while not at_goal():
     else:
         move()
 '''
+
+#DAY 6 - Reeborg - Final hurdle challenge - random distance-, height-, and nr of hurdles
+#       My solution -> using 21 lines
+'''
+def turn_right():
+    turn_left()
+    turn_left()
+    turn_left()
+
+def jump():
+    turn_left()
+    while not right_is_clear():
+        move()
+    turn_right()
+    move()
+    turn_right()
+    while not wall_in_front():
+        move()
+    turn_left()
+    
+while not at_goal():
+    if wall_in_front():
+        jump()
+    else:
+        move()
+'''
+
+#       Teachers solution   -> 21 lines also but using more readable functions and logic conditions
+'''
+def turn_right():
+        turn_left()
+        turn_left()
+        turn_left()
+
+
+def jump():
+        turn_left()
+        while wall_on_right():
+                move()
+        turn_right()
+        move()
+        turn_right()
+        while front_is_clear():
+                move()
+        turn_left()
+
+
+while not at_goal():
+        if wall_in_front():
+                jump()
+        else:
+                move()
+'''
