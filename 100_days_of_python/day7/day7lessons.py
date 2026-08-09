@@ -48,6 +48,29 @@ print(display)
 
 
 
+t hint.
+'''
+placeholder = str()
+word_length = len(chosen_word)
+for position in range(word_length):
+    placeholder += "_"
+print(placeholder)
+'''
+TODO-2
+Create an empty string called "display".
+Loop through each letter in the chosen_word
+If the letter at that position matches guess then reveal that letter in the display at that position.
+e.g. If the user guessed "p" and the chosen word was "apple", then display should be _ p p _ _.
+Print display and you should see the guessed letter in the correct position.
+But every letter that is not a match is represented with a "_".
+'''
+display = str()
+for letter in chosen_word:
+    if letter == guess:
+        display += guess
+    else:
+        display += "_"
+print(display)
 #   Lesson 3 <--- currently here trying to solve todo-1. 
 print("Lesson 3")
 '''
@@ -73,3 +96,32 @@ TODO-2
 Update the for loop so that previous guesses are added to the display String.
 At the moment, when the user makes a new guess, the previous guess gets replaced by a "_". We need to fix that by updating the for loop.
 '''
+
+
+#   Lesson 3 <--- currently here trying to solve todo-1.
+
+'''
+TODO-1
+Use a while loop to let the user guess again.
+The loop should only stop once the user has guessed all the letters in the chosen_word.
+At that point display has no more blanks ("_"). Then you can tell the user they've won.
+'''
+
+display = str()
+game_over = False
+correct_letters = []
+while not game_over:
+    guess = input("Type a letter: ").lower()
+    for letter in placeholder:
+        if letter == guess:
+            display += guess
+            correct_letters.append(guess)
+        elif letter in correct_letters:
+            display += letter
+        else:
+            display += "_"
+    print(display)
+    if "_" not in display:
+        print ("You win!")
+        game_over = True
+
