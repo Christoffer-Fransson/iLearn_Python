@@ -60,3 +60,19 @@ greet_with("Nowhere", "Jack Bauer")
 print("Keyword Arguments")
 greet_with(location = "Nowhere", name = "Jack Bauer Jr")
 
+#   LESSON 5 - CODING EXERCISE - Love Calculator
+def calculate_love_score(name_a, name_b):
+    both_names = name_a + name_b
+
+    true = 0
+    love = 0
+    for letter in both_names:
+        if letter.upper() in "TRUE":
+            true += 1
+        if letter.upper() in "LOVE":
+            love += 1
+
+    print(f'{true}{love}')
+
+
+calculate_love_score("Angela Yu", "Jack Bauer")    
