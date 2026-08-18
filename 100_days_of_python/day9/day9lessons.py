@@ -91,3 +91,38 @@ travel_log2 = {
 }
 # Challenge print Stuttgart from travel log
 print(travel_log2["Germany"]["cities_visited"][2])      # Teachers solution
+
+#DAY9: Blind Auction Project
+# TODO-1: Ask the user for input
+# TODO-2: Save data into dictionary {name: price}
+# TODO-3: Whether if new bids need to be added
+
+import art
+print(art.logo)
+received_bids = {}
+name = []
+bids = []
+keep_running = True
+
+while keep_running == True:
+    received_bids = {
+        "Bidder": [name],
+        "Bid": [bids]
+    }
+    name.append(input("What is your name?:"))
+    bids.append(int(input("What is your bid?:")))
+
+    choice= input("Are there any other bidders? Type 'yes' or 'no'.")
+    if choice == 'yes':
+        print("\n" * 100)
+        keep_running = True
+
+    elif choice == 'no':
+        keep_running = False
+    else:
+        keep_running = True
+# TODO-4: Compare bids in dictionary        <--- I am here
+winning_bid = max(int(received_bids["Bid"]))
+print(winning_bid)
+
+print(received_bids["Bid"])
