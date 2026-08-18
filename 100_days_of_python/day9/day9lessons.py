@@ -45,3 +45,49 @@ print(programming_dictionary["Bug"])
 for key in programming_dictionary:
     print(key)
     print(programming_dictionary[key])
+
+#DAY9: Nested lists and Dictionaries
+
+'''     You can add lists or Dictionaries inside a dictionary as value
+{
+    Key: [List],
+    Key2: {Dict},
+}
+'''
+
+capitals = {
+    "France": "Paris",
+    "Germany": "Berlin",
+}
+
+# Nested List in Dictionary
+'''
+travel_log = {
+    "France": "Paris", "Lille", "Lyon", # This doesnt work needs to be turned into a list
+}
+'''
+travel_log = {
+    "France": ["Paris", "Lille", "Dijon"],  # This works eg. using a list as value.
+    "Germany": ["Stuttgart", "Berlin"],
+}
+
+# Challenge how to print Lille
+print(travel_log['France'][1])
+
+nested_list = ["A", "B", ["C", "D"]]    # Example of 2D-list eg a list in a list
+print((nested_list[2])[1])              # Messy but it worked. :) ()-parenthes was unnecessary
+print(nested_list[2][1])                # Teachers solution
+
+# Nesting a dictionary within a dictionary
+travel_log2 = {
+    "France":{
+        "num_times_visited": 8,
+        "cities_visited": ["Paris", "Lille", "Dijon"]
+    },
+    "Germany": {
+        "cities_visited":["Berlin", "Hamburg", "Stuttgart"],
+        "total_visits": 5
+    },
+}
+# Challenge print Stuttgart from travel log
+print(travel_log2["Germany"]["cities_visited"][2])      # Teachers solution
