@@ -92,6 +92,7 @@ travel_log2 = {
 # Challenge print Stuttgart from travel log
 print(travel_log2["Germany"]["cities_visited"][2])      # Teachers solution
 
+
 #DAY9: Blind Auction Project
 # TODO-1: Ask the user for input
 # TODO-2: Save data into dictionary {name: price}
@@ -100,17 +101,15 @@ print(travel_log2["Germany"]["cities_visited"][2])      # Teachers solution
 import art
 print(art.logo)
 received_bids = {}
-name = []
-bids = []
 keep_running = True
+bidder_list = []
+bids = []
 
 while keep_running == True:
-    received_bids = {
-        "Bidder": [name],
-        "Bid": [bids]
-    }
-    name.append(input("What is your name?:"))
+    bidder_list.append(input("What is your name?:"))
     bids.append(int(input("What is your bid?:")))
+    received_bids["Bidder"] = bidder_list
+    received_bids["Bids"] = bids
 
     choice= input("Are there any other bidders? Type 'yes' or 'no'.")
     if choice == 'yes':
@@ -121,8 +120,11 @@ while keep_running == True:
         keep_running = False
     else:
         keep_running = True
-# TODO-4: Compare bids in dictionary        <--- I am here
-winning_bid = max(int(received_bids["Bid"]))
-print(winning_bid)
+# TODO-4: Compare bids in dictionary     
+winning_bid = max(received_bids["Bids"])
+# for bid in received_bids["Bids"]:
+#     if bid > winning_bid:
+#         winning_bid = bid
+winning_bid_position = received_bids["Bids"].index(winning_bid)
+print(f'{received_bids["Bidder"][winning_bid_position]} bidding {received_bids["Bids"][winning_bid_position]} won the auction')
 
-print(received_bids["Bid"])
