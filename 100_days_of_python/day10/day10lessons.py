@@ -44,3 +44,33 @@ def is_leap_year(year):
                 return False
     else:
         return False     
+
+
+
+# DAY10: Lesson 3 - Docstrings
+
+def name_of_function(parameter):
+    """Doc Strings goes here and provides mouseover information about the function"""  # !!! NOTE: No spaces after or in front of """
+    print("hello")
+
+def format_name(f_name, l_name):
+    """Take a first and last name and format it to return the
+    title case version of the name."""
+    formated_f_name = f_name.title()
+    formated_l_name = l_name.title()
+    return f"{formated_f_name} {formated_l_name}"
+
+
+formatted_name = format_name("AnGeLa", "YU")
+
+length = len(formatted_name)
+
+
+
+name_of_function("test")    # hover over the function call to see Doc string infor at bottom
+format_name("test")         # hover over the function call to see Doc string infor at bottom
+
+
+# IT IS PYTHONIC NOT TO USE MULTI LINE COMENTS SIMILIAR TO SQL USING DOC STRINGS
+# USE REGULAR BY LINE COMMENTING
+# FOR EACH LINE INSTEAD -> CTRL + / SHORTKEY
