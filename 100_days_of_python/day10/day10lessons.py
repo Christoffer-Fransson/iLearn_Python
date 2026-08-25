@@ -74,3 +74,68 @@ format_name("test")         # hover over the function call to see Doc string inf
 # IT IS PYTHONIC NOT TO USE MULTI LINE COMENTS SIMILIAR TO SQL USING DOC STRINGS
 # USE REGULAR BY LINE COMMENTING
 # FOR EACH LINE INSTEAD -> CTRL + / SHORTKEY
+
+
+#DAY10: Calculator project
+# My solution (not optimised but works note: no while loop exit in task)
+import art
+def add(n1, n2):
+    return n1 + n2
+
+# TODO: Write out the other 3 functions - subtract, multiply and divide
+
+def subtract(n1, n2):
+    return n1 - n2
+
+def multiply(n1, n2):
+    return n1 * n2
+
+def divide(n1, n2):
+    return n1 / n2
+
+# TODO: Add these 4 functions into a dictionary. Keys = "+", "-", "*", "/
+
+operations = {
+    "+": add,
+    "-": subtract,
+    "*": multiply,
+    "/": divide,
+}
+
+# TODO: Use the dictionary operations to perform the calculations - Multiply 4 * 8 using the dictionary
+# result = operations["*"](4,8)
+# print(result)
+
+# TODO: Finish the program
+
+def calc_engine(n1, operator, n2):
+    calculation_result = operations[operator](n1, n2)
+    return calculation_result
+
+continue_run = True
+print(art.logo)
+nr1 = int(input("What's the first number: "))
+while continue_run:
+        operator = str(input("+\n-\n*\n/\nPick an operation: "))
+        nr2 = int(input("What's the next number: "))
+        result = calc_engine(nr1, operator, nr2)
+        print(f"{nr1} {operator} {nr2} = {result}")
+        choice = input(f"Type 'y' to continue calculating with {result}, or type 'n' to start a new calculation ")
+
+        if choice.lower() == 'y':
+            nr1 = result
+            operator = str(input("+\n-\n*\n/\nPick an operation: "))
+            nr2 = int(input("What's the next number: "))
+            result = calc_engine(nr1, operator, nr2)
+            print(f"{nr1} {operator} {nr2} = {result}")
+            choice = input(f"Type 'y' to continue calculating with {result}, or type 'n' to start a new calculation ")
+
+        if choice.lower() =='n':
+            print("\n" * 100)
+            print(art.logo)
+            nr1 = int(input("What's the first number: "))
+            operator = str(input("+\n-\n*\n/\nPick an operation: "))
+            nr2 = int(input("What's the next number: "))
+            result = calc_engine(nr1, operator, nr2)
+            print(f"{nr1} {operator} {nr2} = {result}")
+            choice = input(f"Type 'y' to continue calculating with {result}, or type 'n' to start a new calculation ")
