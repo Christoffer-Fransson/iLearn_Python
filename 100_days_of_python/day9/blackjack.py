@@ -1,5 +1,3 @@
-#DAY11: Dev Blackjack capstone file
-
 #DAY11: Blackjack capstone project
 import art
 import random
