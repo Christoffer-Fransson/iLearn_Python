@@ -13,10 +13,10 @@ def draw_card():
 def deal_hand(amount_cards, hand_type):
     i = 0
     while i < amount_cards:
-        if hand_type == "player":
+        if hand_type.lower() == "player":
             player_hand.append(draw_card())
             print("do stuff")
-        if hand_type == "computer":
+        if hand_type.lower() == "computer":
             computer_hand.append(draw_card())
             print("do_stuff")
         i += 1
@@ -29,11 +29,16 @@ def check_bust(player_hand, dealer_hand):
         return True
     if sum(dealer_hand) > 21:
         return True
+# --------
 
 bust = False
 while not bust:
     print(art.logo)
-
+    # you Cards [8,3], current score: 11
+    # Computers, first card: 2
+    # Type 'y' to get another cards, type 'n' to pass:
+-->     player_hand= (deal_hand(2,"player")")
+    print(f'Your cards: {player_hand}, current score: {sum(player_hand)}")
     while len(player_hand) <2 and len(dealer_hand) <2:
         print("dealer deals card to player")
         player_hand.append(draw_card())
@@ -54,5 +59,4 @@ while not bust:
         print("Player stays")
     if choice.lower() == "q":
         bust = True
-
 
