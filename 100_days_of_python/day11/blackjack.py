@@ -21,22 +21,21 @@ def deal_hand(amount_cards, hand_type):
         i += 1
     return player_hand, computer_hand
 
-def check_bust(hand):
+def check_bust(hand, hand_type):
     if hand < 21:
+        if hand_type.lower() == "player":
+            print(f'Your cards: {player_hand}, current score: {sum(player_hand)}')
+        elif hand_type.lower() == "computer":
+            print(f'Computer cards: {computer_hand[0]}, current score: {sum(computer_hand)}')
         return True
     elif hand == 21:
         print("temp yay")
-    else: 
+    else:
         print("temp bust")
         return False
-# ---------
 
-def check_bust(player_hand, dealer_hand):
-    if sum(player_hand) > 21:
-        return True
-    if sum(dealer_hand) > 21:
-        return True
-# --------
+
+
 run = True
 while run:
     run_choice = input("Do you want to play a game of Blackjack? Type 'y' or 'n': ")
