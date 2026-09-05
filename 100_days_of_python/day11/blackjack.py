@@ -22,13 +22,13 @@ def deal_hand(amount_cards, hand_type):
     return player_hand, computer_hand
 
 def check_bust(hand, hand_type):
-    if hand < 21:
+    if sum(hand) < 21:
         if hand_type.lower() == "player":
             print(f'Your cards: {player_hand}, current score: {sum(player_hand)}')
         elif hand_type.lower() == "computer":
             print(f'Computer cards: {computer_hand[0]}, current score: {sum(computer_hand)}')
         return True
-    elif hand == 21:
+    elif sum(hand) == 21:
         print("temp yay")
     else:
         print("temp bust")
@@ -43,7 +43,7 @@ while run:
         print(art.logo)
         deal_hand(2,"player")
         deal_hand(2,"computer")
-        print(f'your Cards: {player_hand}, current score {sum(player_hand)}')
+        print(f'Your cards: {player_hand}, current score: {sum(player_hand)}')
         print(f"Computer's first card: {computer_hand[0]}")
 
         keep_playing = True
@@ -51,6 +51,7 @@ while run:
             choice = input("Type 'y' to get another card, type 'n' to pass  ")
             if choice.lower() == "y":
                 deal_hand(1,"player")
+                check_bust(player_hand, hand_type="player")
                 print(f"Your Cards: {player_hand}, current score {sum(player_hand)}")
             if choice.lower() == "n":
                 print("temp:stands")
