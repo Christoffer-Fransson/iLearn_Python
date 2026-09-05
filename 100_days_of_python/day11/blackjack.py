@@ -24,14 +24,17 @@ def deal_hand(amount_cards, hand_type):
 def check_bust(hand, hand_type):
     if sum(hand) < 21:
         if hand_type.lower() == "player":
-            print(f'Your cards: {player_hand}, current score: {sum(player_hand)}')
+            print(f'    Your cards: {player_hand}, current score: {sum(player_hand)}')
         elif hand_type.lower() == "computer":
-            print(f'Computer cards: {computer_hand[0]}, current score: {sum(computer_hand)}')
+            print(f'    Computer cards: {computer_hand[0]}, current score: {sum(computer_hand)}')
         return True
     elif sum(hand) == 21:
         print("temp yay")
     else:
-        print("temp bust")
+        print(f"Your final hand: {player_hand}, final score: {sum(player_hand)}")
+        print(f"Computers final hand: {sum(computer_hand)}")
+        print("You went over. You loose 😢")
+
         return False
 
 
