@@ -4,8 +4,7 @@ from operator import truediv
 import art
 import random
 card = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
-computer_hand = []
-player_hand = []
+
 
 def draw_card():
     card_value = random.choice(card)
@@ -22,28 +21,30 @@ def deal_hand(amount_cards, hand_type):
     return player_hand, computer_hand
 
 def check_bust(hand, hand_type):
-    if hand < 21:
+    if sum(hand) < 21:
         if hand_type.lower() == "player":
-            print(f'Your cards: {player_hand}, current score: {sum(player_hand)}')
+            print(f'    Your cards: {player_hand}, current score: {sum(player_hand)}')
         elif hand_type.lower() == "computer":
-            print(f'Computer cards: {computer_hand[0]}, current score: {sum(computer_hand)}')
+            print(f'    Computer cards: {computer_hand[0]}, current score: {sum(computer_hand)}')
         return True
-    elif hand == 21:
+    elif sum(hand) == 21:
         print("temp yay")
     else:
-        print("temp bust")
+        print(f"Your final hand: {player_hand}, final score: {sum(player_hand)}")
+        print(f"Computers final hand: {sum(computer_hand)}")
+        print("You went over. You loose 😢")
         return False
-
-
 
 run = True
 while run:
+    computer_hand = []          # Sets/resets player hand to empty
+    player_hand = []            # Sets/resets computer hand to empty
     run_choice = input("Do you want to play a game of Blackjack? Type 'y' or 'n': ")
     if run_choice.lower() == "y":
         print(art.logo)
         deal_hand(2,"player")
         deal_hand(2,"computer")
-        print(f'your Cards: {player_hand}, current score {sum(player_hand)}')
+        print(f'Your cards: {player_hand}, current score: {sum(player_hand)}')
         print(f"Computer's first card: {computer_hand[0]}")
 
         keep_playing = True
@@ -51,6 +52,7 @@ while run:
             choice = input("Type 'y' to get another card, type 'n' to pass  ")
             if choice.lower() == "y":
                 deal_hand(1,"player")
+                keep_playing = check_bust(player_hand, hand_type="player")              # checks hand sum and if stop loop criteria is met
                 print(f"Your Cards: {player_hand}, current score {sum(player_hand)}")
             if choice.lower() == "n":
                 print("temp:stands")
@@ -61,29 +63,3 @@ while run:
     if run_choice.lower() == "n":
         run = False
 
-
-
-#
-#     # Type 'y' to get another cards, type 'n' to pass:
-# -->     player_hand= (deal_hand(2,"player")")
-#     print(f'Your cards: {player_hand}, current score: {sum(player_hand)}")
-#     while len(player_hand) <2 and len(dealer_hand) <2:
-#         print("dealer deals card to player")
-#         player_hand.append(draw_card())
-#
-#         print("dealer deals card to dealer")
-#         dealer_hand.append(draw_card())
-#
-#         print(f'Dealer hand: {dealer_hand}')
-#         print(f'Player hand: {player_hand}')
-#     choice = input("write 'hit' to to take a new card or 'stay' to not get more cards: ")
-#     if choice.lower() == "hit":
-#         player_hand.append(draw_card())
-#         print(f'Dealer hand: {dealer_hand}')
-#         print(f'Player hand: {player_hand}')
-#         print(f"player hand sum = {sum(player_hand)}")
-#
-#     if choice.lower() == "stay":
-#         print("Player stays")
-#     if choice.lower() == "q":
-#         bust = True
