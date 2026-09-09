@@ -4,6 +4,10 @@ import art
 import random
 card = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
 
+
+def clear_terminal():
+    print("\n" * 100)
+
 def draw_card():
     card_value = random.choice(card)
     return card_value
@@ -40,8 +44,10 @@ while run:
     player_hand = []            # Sets/resets computer hand to empty
     run_choice = input("Do you want to play a game of Blackjack? Type 'y' or 'n': ")
 
-    if run_choice.lower() == "y":
+    if run_choice.lower() == "y":           # Player wants to play a game of blackjack
+
         # Inner game interactivity loop
+        clear_terminal() # Clears the terminal window
         print(art.logo)
         deal_hand(2,"player")
         deal_hand(2,"computer")
