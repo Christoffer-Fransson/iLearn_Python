@@ -30,7 +30,6 @@ def check_hand(hand, hand_type):
     else:           # if >21 returns false killing the loop
         return False
 
-
 # Game start / Outer game loop
 run = True
 while run:
@@ -49,13 +48,17 @@ while run:
         keep_playing = True
         while keep_playing:
             choice = input("Type 'y' to get another card, type 'n' to pass  ")
-            if choice.lower() == "y":
+            if choice.lower() == "y":           # Player wants another card
                 deal_hand(1,"player")
                 keep_playing = check_hand(player_hand, hand_type="player")              # checks hand sum and if stop loop criteria is met
                 print(f"Your Cards: {player_hand}, current score {sum(player_hand)}")
 
-            if choice.lower() == "n":
-                print("temp:stands")
+            if choice.lower() == "n":           # Player stands, computer plays
+                print("Player stands")
+                while sum(computer_hand) <= 16:
+                    deal_hand(1,"computer")
+                    check_hand(computer_hand, hand_type="computer")
+                keep_playing = False
 
     print(f"Your final hand: {player_hand}, final score: {sum(player_hand)}")
     print(f"Computers final hand: {computer_hand}, final score:{sum(computer_hand)}")
