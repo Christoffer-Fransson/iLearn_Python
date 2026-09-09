@@ -3,3 +3,7 @@
 MicrosoftLearn/PythonForBeginners/env
 
 PYTHON_APP_DEV/Powerpoint_Export/env
+.venv/
+.idea/
+__pycache__/
+*.py[cod]
