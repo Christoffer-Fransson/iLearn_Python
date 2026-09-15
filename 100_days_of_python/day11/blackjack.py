@@ -31,11 +31,19 @@ def check_hand(hand, hand_type):
         elif hand_type.lower() == "computer":
             print(f'    Computer cards: {computer_hand[0]}, current score: {sum(computer_hand)}')
         return True
-    elif sum(hand)>21:           # if >21 returns false killing the loop
-        if 11 in hand and sum(hand)-10 <= 21:   # If bust hand has ace and total sum with ace as 1 is less or equal to 21
+    # elif sum(hand)>21:           # if >21 returns false killing the loop
+    #     if 11 in hand and sum(hand)-10 <= 21:   # If bust hand has ace and total sum with ace as 1 is less or equal to 21
+    #         hand[hand.index(11)] = 1
+    #         return True
+    #     return False
+
+# --------
+    elif sum(hand)>21 and 11 in hand:           # if >21 returns false killing the loop
+        while 11 in hand and sum(hand)>21:
             hand[hand.index(11)] = 1
-            return True
+
         return False
+# -------
 
 # Game start / Outer game loop
 run = True
