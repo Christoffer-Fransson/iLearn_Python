@@ -50,8 +50,8 @@ def check_hand(hand, hand_type):
 # Game start / Outer game loop
 run = True
 while run:
-    computer_hand = []          # Sets/resets player hand to empty
-    player_hand = []            # Sets/resets computer hand to empty
+    computer_hand = []          # Sets/resets Computer hand to empty
+    player_hand = []            # Sets/resets Player hand to empty
     run_choice = input("Do you want to play a game of Blackjack? Type 'y' or 'n': ")
 
     if run_choice.lower() == "y":           # Player wants to play a game of blackjack
