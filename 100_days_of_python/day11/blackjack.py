@@ -4,7 +4,6 @@ import art
 import random
 card = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
 
-
 def clear_terminal():
     print("\n" * 100)
 
@@ -21,6 +20,15 @@ def deal_hand(amount_cards, hand_type):
             computer_hand.append(draw_card())
         i += 1
     return player_hand, computer_hand
+
+def check_blackjack(hand):
+    if len(hand) == 2:
+        if 10 in hand and 11 in hand:
+            return True
+        else:
+            return False # 10 and 11 not in hand
+    else:
+        return False    # Hand not exactly two cards
 
 def check_hand(hand, hand_type):
     if sum(hand)>21 and 11 in hand:           # if >21 returns false killing the loop
@@ -40,12 +48,6 @@ def check_hand(hand, hand_type):
         return False
     elif sum(hand) > 21 and 11 not in hand:
         return False
-    # elif sum(hand)>21:           # if >21 returns false killing the loop
-    #     if 11 in hand and sum(hand)-10 <= 21:   # If bust hand has ace and total sum with ace as 1 is less or equal to 21
-    #         hand[hand.index(11)] = 1
-    #         return True
-    #     return False
-
 
 # Game start / Outer game loop
 run = True
@@ -63,7 +65,11 @@ while run:
         deal_hand(2,"computer")
         print(f'Your cards: {player_hand}, current score: {sum(player_hand)}')
         print(f"Computer's first card: {computer_hand[0]}")
+        blackjack = 0
 
+        # Checks hands for blackjack
+        player_blackjack = check_blackjack(player_hand)
+        computer_blackjack = check_blackjack(computer_hand)
         keep_playing = True
         while keep_playing:
             choice = input("Type 'y' to get another card, type 'n' to pass  ")
