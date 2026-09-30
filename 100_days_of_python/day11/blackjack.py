@@ -105,9 +105,6 @@ while run:
             print("You went over. You loose 😢")
 
 
- #       print(f'Your Cards: {player_hand}, current score: {sum(player_hand)}')
- #       print(f"Computer's first card: {computer_hand[0]}")
-
     #Outer game loop - for when the user wants to quit playing BlackJack
     if run_choice.lower() == "n":
         run = False
