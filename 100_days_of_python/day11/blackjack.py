@@ -65,28 +65,42 @@ while run:
         deal_hand(2,"computer")
         print(f'Your cards: {player_hand}, current score: {sum(player_hand)}')
         print(f"Computer's first card: {computer_hand[0]}")
-        blackjack = 0
+#        blackjack = 0
 
         # Checks hands for blackjack
         player_blackjack = check_blackjack(player_hand)
         computer_blackjack = check_blackjack(computer_hand)
-        keep_playing = True
-        while keep_playing:
-            choice = input("Type 'y' to get another card, type 'n' to pass  ")
-            if choice.lower() == "y":           # Player wants another card
-                deal_hand(1,"player")
-                keep_playing = check_hand(player_hand, hand_type="player")              # checks hand sum and if stop loop criteria is met
-                print(f"Your Cards: {player_hand}, current score {sum(player_hand)}")
 
-            if choice.lower() == "n":           # Player stands, computer plays
-                print("Player stands")
-                while sum(computer_hand) <= 16:
-                    deal_hand(1,"computer")
-                    check_hand(computer_hand, hand_type="computer")
-                keep_playing = False
+        # Evaluates starting hand -> Blacjack winning conditions
+        if player_blackjack and computer_blackjack:
+            result = "Player and Computer has Blackjack! Computer wins!"
+        elif player_blackjack and computer_blackjack == False:
+            result = "Player has Blackjack! Player Wins!"
+        elif player_blackjack == False and computer_blackjack:
+            result = "Computer has blackjack! Computer wins!"
+        else:
+            result = None
+            # Main game loop
+            keep_playing = True
+            while keep_playing:
+                choice = input("Type 'y' to get another card, type 'n' to pass  ")
+                if choice.lower() == "y":           # Player wants another card
+                    deal_hand(1,"player")
+                    keep_playing = check_hand(player_hand, hand_type="player")              # checks hand sum and if stop loop criteria is met
+                    print(f"Your Cards: {player_hand}, current score {sum(player_hand)}")
+
+                if choice.lower() == "n":           # Player stands, computer plays
+                    print("Player stands")
+                    while sum(computer_hand) <= 16:
+                        deal_hand(1,"computer")
+                        check_hand(computer_hand, hand_type="computer")
+                    keep_playing = False
+
 
     print(f"Your final hand: {player_hand}, final score: {sum(player_hand)}")
     print(f"Computers final hand: {computer_hand}, final score:{sum(computer_hand)}")
+    if result is not None:
+        print(result)
     if sum(player_hand) > 21:
         print("You went over. You loose 😢")
 
