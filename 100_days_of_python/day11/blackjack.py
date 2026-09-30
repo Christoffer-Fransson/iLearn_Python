@@ -97,12 +97,12 @@ while run:
                     keep_playing = False
 
 
-    print(f"Your final hand: {player_hand}, final score: {sum(player_hand)}")
-    print(f"Computers final hand: {computer_hand}, final score:{sum(computer_hand)}")
-    if result is not None:
-        print(result)
-    if sum(player_hand) > 21:
-        print("You went over. You loose 😢")
+        print(f"Your final hand: {player_hand}, final score: {sum(player_hand)}")
+        print(f"Computers final hand: {computer_hand}, final score:{sum(computer_hand)}")
+        if result is not None:
+            print(result)
+        if sum(player_hand) > 21:
+            print("You went over. You loose 😢")
 
 
  #       print(f'Your Cards: {player_hand}, current score: {sum(player_hand)}')
