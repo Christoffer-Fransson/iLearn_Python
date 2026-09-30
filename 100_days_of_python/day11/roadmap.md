@@ -1,17 +1,17 @@
 
 check - Deal both user and computer a starting hand of 2 random card values.
 
-Detect when computer or user has a blackjack. (Ace + 10 value card).
+check - Detect when computer or user has a blackjack. (Ace + 10 value card).
 
 check - If computer gets blackjack, then the user loses (even if the user also has a blackjack). If the user gets a blackjack, then they win (unless the computer also has a blackjack).
 
 check - Calculate the user's and computer's scores based on their card values.
 
-check - If an ace is drawn, count it as 11. But if the total goes over 21, count the ace as 1 instead.
-
+Partially - If an ace is drawn, count it as 11. But if the total goes over 21, count the ace as 1 instead.
+Note: Need to fix this check for the starting hand. 
 check - Reveal computer's first card to the user.
 
-Game ends immediately when user score goes over 21 or if the user or computer gets a blackjack.
+check - Game ends immediately when user score goes over 21 or if the user or computer gets a blackjack.
 
 check - Ask the user if they want to get another card.
 
