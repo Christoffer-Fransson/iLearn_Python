@@ -3,7 +3,7 @@ check - Deal both user and computer a starting hand of 2 random card values.
 
 Detect when computer or user has a blackjack. (Ace + 10 value card).
 
-If computer gets blackjack, then the user loses (even if the user also has a blackjack). If the user gets a blackjack, then they win (unless the computer also has a blackjack).
+check - If computer gets blackjack, then the user loses (even if the user also has a blackjack). If the user gets a blackjack, then they win (unless the computer also has a blackjack).
 
 check - Calculate the user's and computer's scores based on their card values.
 
