@@ -8,7 +8,7 @@ check - If computer gets blackjack, then the user loses (even if the user also h
 check - Calculate the user's and computer's scores based on their card values.
 
 check - If an ace is drawn, count it as 11. But if the total goes over 21, count the ace as 1 instead.
-Note: Need to fix this check for the starting hand. 
+
 check - Reveal computer's first card to the user.
 
 check - Game ends immediately when user score goes over 21 or if the user or computer gets a blackjack.
@@ -19,6 +19,6 @@ check - Once the user is done and no longer wants to draw any more cards, let th
 
 Compare user and computer scores and see if it's a win, loss, or draw.
 
-Print out the player's and computer's final hand and their scores at the end of the game.
+check - Print out the player's and computer's final hand and their scores at the end of the game.
 
 check - After the game ends, ask the user if they'd like to play again. Clear the console for a fresh start.
