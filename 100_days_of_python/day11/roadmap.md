@@ -7,7 +7,7 @@ check - If computer gets blackjack, then the user loses (even if the user also h
 
 check - Calculate the user's and computer's scores based on their card values.
 
-Partially - If an ace is drawn, count it as 11. But if the total goes over 21, count the ace as 1 instead.
+check - If an ace is drawn, count it as 11. But if the total goes over 21, count the ace as 1 instead.
 Note: Need to fix this check for the starting hand. 
 check - Reveal computer's first card to the user.
 
