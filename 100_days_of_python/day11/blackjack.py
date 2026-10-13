@@ -30,25 +30,22 @@ def check_blackjack(hand):
     else:
         return False    # Hand not exactly two cards
 
-def check_hand(hand, hand_type):
-    if sum(hand)>21 and 11 in hand:           # if >21 returns false killing the loop
-        while 11 in hand and sum(hand)>21:
+def adjust_aces(hand):
+    while 11 in hand and sum(hand)>21:
             hand[hand.index(11)] = 1
-        if sum(hand)>= 21:
-            return False
-        if sum(hand) < 21:
-            return True
-    elif sum(hand) < 21:
-        if hand_type.lower() == "player":
-            print(f'    Your cards: {player_hand}, current score: {sum(player_hand)}')
-        elif hand_type.lower() == "computer":
-            print(f'    Computer cards: {computer_hand[0]}, current score: {sum(computer_hand)}')
-        return True
-    elif sum(hand) == 21:
-        return False
-    elif sum(hand) > 21 and 11 not in hand:
+
+def check_hand(hand, hand_type):
+    adjust_aces(hand)
+
+    if sum(hand) >= 21:
         return False
 
+    if hand_type.lower() == "player":
+        print(f'    Your cards: {player_hand}, current score: {sum(player_hand)}')
+    elif hand_type.lower() == "computer":
+        print(f'    Computer cards: {computer_hand[0]}, current score: {sum(computer_hand)}')
+
+    return True
 # Game start / Outer game loop
 run = True
 while run:
@@ -63,6 +60,10 @@ while run:
         print(art.logo)
         deal_hand(2,"player")
         deal_hand(2,"computer")
+        
+        adjust_aces(player_hand)   # Adjust hand if aces are present
+        adjust_aces(computer_hand)   # Adjust hand if aces are present
+        
         print(f'Your cards: {player_hand}, current score: {sum(player_hand)}')
         print(f"Computer's first card: {computer_hand[0]}")
 #        blackjack = 0
