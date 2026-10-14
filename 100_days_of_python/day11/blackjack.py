@@ -96,14 +96,18 @@ while run:
                         deal_hand(1,"computer")
                         check_hand(computer_hand, hand_type="computer")
                     keep_playing = False
-
+            
+            if sum(player_hand) > 21:
+                    result = ("You went over. You lose 😢")
+            elif sum(computer_hand) > 21:
+                    result = ("Computer went over. You win!")
+    
 
         print(f"Your final hand: {player_hand}, final score: {sum(player_hand)}")
         print(f"Computers final hand: {computer_hand}, final score:{sum(computer_hand)}")
         if result is not None:
             print(result)
-        if sum(player_hand) > 21:
-            print("You went over. You loose 😢")
+
 
 
     #Outer game loop - for when the user wants to quit playing BlackJack
