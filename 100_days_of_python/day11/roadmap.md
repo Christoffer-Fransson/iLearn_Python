@@ -17,7 +17,7 @@ check - Ask the user if they want to get another card.
 
 check - Once the user is done and no longer wants to draw any more cards, let the computer play. The computer should keep drawing cards unless their score goes over 16.
 
-Compare user and computer scores and see if it's a win, loss, or draw.
+check - Compare user and computer scores and see if it's a win, loss, or draw.
 
 check - Print out the player's and computer's final hand and their scores at the end of the game.
 
